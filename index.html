@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>FACE CLICKER</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="css/styles.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Permanent+Marker|Shrikhand" rel="stylesheet">
+
+  <script src="jscript/script.js" type="text/javascript" async></script>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="title">
+      <h1>FACE CLICKER</h1>
+    </div>
+    <nav class="tabtop">
+      <button class="tablink" onclick="openPage('home', this)" id="defaultOpen"><h2>HOME</h2></button>
+      <button class="tablink" onclick="openPage('more', this)"><h2>MORE</h2></button>
+    </nav>
+  </div>
+
+  <!--HOME START-->
+  <div id="home" class="tabcontent">
+    <h1>HOME</h1>
+    <div class="container">
+      <div class="left" id="clickfaces">
+        <div>
+          <!--CLINTON START-->
+          <div>
+            <button type="button" class="facebutton" id="clintonbtn" onclick="oof()">
+              <img src="images/clinton.jpg" id = "clintonimg">
+            </button>
+            <p class="sound_text" id="oof"></p>
+          </div>
+          <!--CLINTON END-->
+        </div>
+        <div>
+          <!--YU HSUAN START-->
+          <div>
+            <button type="button" class="facebutton" id="yuhsuanbtn" onclick="ohyeah()">
+              <img src="images/yuhsuan.jpg" id = "yuhsuanimg">
+            </button>
+            <p class="sound_text" id="ohyeah"></p>
+          </div>
+          <!--YU HSUAN END-->
+        </div>
+      </div>
+      <div class="middle">
+        <!--SAVE START-->
+        <div id="save_btn">
+          <button class="port" onclick="showSave()">SAVE OPTIONS</button>
+        </div>
+        <div id="save_div">
+          <!--EXPORT START-->
+          <div class="port_div">
+            <button class="port" onclick="Export()">EXPORT SAVE</button>
+            <textarea id="export"></textarea>
+          </div>
+          <!--EXPORT END-->
+          <!--IMPORT START-->
+          <div class="port_div">
+            <button class="port" onclick="Import()">IMPORT SAVE</button>
+            <textarea id="import"></textarea>
+          </div>
+          <!--IMPORT END-->
+          <button class="port hide_btn" onclick="hideSave()">HIDE</hide>
+        </div>
+        <!--SAVE END-->
+        <!--DELETE START-->
+        <div id="delete_btn">
+          <button class="port" onclick="showDelete()">DELETE OPTIONS</button>
+        </div>
+        <div id="delete_div">
+          <button class="delete" onclick="clearAll()">CLEAR ALL</button>
+          <button class="delete" onclick="clearThis('oofClickcount')">CLEAR OOF</button>
+          <button class="delete" onclick="clearThis('ohyeahClickcount')">CLEAR OH YEAH</button>
+          <button class="delete hide_btn" onclick="hideDelete()">HIDE</button>
+        </div>
+        <!--DELETE END-->
+      </div>
+      <div class="right">
+      </div>
+    </div>
+  </div>
+  <!--HOME END-->
+
+  <div id="more" class="tabcontent">
+    <h1>MORE</h1>
+    <p></p>
+  </div>
+
+</body>
+
+</html>

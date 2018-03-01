@@ -1,0 +1,141 @@
+* {
+  font-family: "Oswald";
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+button {
+  outline: none;
+}
+
+.container {
+  display: flex;
+}
+
+.left, .right, .middle {
+  display: flex;
+  flex: 1;
+}
+
+.middle {
+  justify-content: center;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.title {
+  text-align: center;
+  font-size: 200%;
+}
+
+.tabtop {
+  background: red;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: auto;
+}
+
+.tablink {
+  background: none;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tablink:hover {
+  background: black;
+  color: white;
+  transition-duration: .4s;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 20px;
+  height: 100%;
+}
+
+#clickfaces div {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  #clickfaces {
+    flex-wrap: wrap;
+  }
+}
+
+.facebutton {
+  background: black;
+  color: white;
+  border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.facebutton:hover {
+  border: 2px solid red;
+}
+
+.facebutton img {
+  width: 100%;
+}
+
+.facebutton img:hover {
+  cursor: crosshair;
+}
+
+.sound_text {
+  text-align: center;
+}
+
+#save_div, #delete_div {
+  border: 2px solid white;
+  display: none;
+  margin: 5px;
+}
+
+.port_div {
+  display: flex;
+  margin: 10px;
+  margin-left: 0;
+}
+
+.port, .delete {
+  background: black;
+  color: red;
+  border: 2px solid white;
+  margin: 10px;
+  padding: 10px;
+}
+
+.port:hover, .delete:hover {
+  background: white;
+  transition-duration: .3s;
+}
+
+.delete {
+  display: block;
+}
+
+#export, #import {
+  outline: none;
+  resize: vertical;
+}
+
+.hide_btn {
+  color: white;
+}
