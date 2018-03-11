@@ -2,6 +2,7 @@
   font-family: "Oswald";
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -15,6 +16,7 @@ body {
 
 button {
   outline: none;
+  cursor: pointer;
 }
 
 .container {
@@ -34,9 +36,14 @@ button {
   justify-content: flex-end;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+}
+
 .title {
   text-align: center;
-  font-size: 200%;
+  font-size: 300%;
 }
 
 .tabtop {
@@ -83,7 +90,7 @@ button {
   flex-wrap: wrap;
 }
 
-.button {
+.pageLink {
   background: black;
   color: white;
   border: 2px solid white;
@@ -91,12 +98,12 @@ button {
   padding: 10px;
 }
 
-.button:hover {
+.pageLink:hover {
   background: white;
   color: black;
 }
 
-.facebutton {
+.face_btn {
   background: black;
   color: white;
   border: 2px solid black;
@@ -104,26 +111,34 @@ button {
   padding: 10px;
 }
 
-.facebutton:hover {
+.face_btn:hover {
   border: 2px solid red;
 }
 
-.facebutton img {
+.face_btn img {
   width: 100%;
 }
 
-.facebutton img:hover {
+.face_btn img:hover {
   cursor: crosshair;
 }
 
-.sound_text {
+.soundText {
   text-align: center;
+}
+
+#save_btn, #delete_btn {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 50%;
 }
 
 #save_div, #delete_div {
   border: 2px solid white;
   display: none;
-  margin: 5px;
+  flex-direction: column;
+  width: 50%;
 }
 
 .port_div {
@@ -132,12 +147,18 @@ button {
   margin-left: 0;
 }
 
+.port_div .port {
+  width: 50%;
+  margin: 10px;
+}
+
 .port, .delete {
   background: black;
   color: red;
   border: 2px solid white;
-  margin: 10px;
+  margin-bottom: 10px;
   padding: 10px;
+  width: 100%;
 }
 
 .port:hover, .delete:hover {
@@ -146,6 +167,7 @@ button {
 }
 
 .delete {
+  border: none;
   display: block;
 }
 
@@ -155,5 +177,10 @@ button {
 }
 
 .hide_btn {
+  border: none;
   color: white;
+}
+
+.hide_btn:hover {
+  color: black;
 }

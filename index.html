@@ -3,28 +3,32 @@
 
 <head>
 
-  <title>FACE CLICKER</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="css/styles.css" type="text/css" rel="stylesheet">
+  <link href="pokemon.ico" type="image" rel="icon">
   <link href="https://fonts.googleapis.com/css?family=Oswald|Permanent+Marker|Shrikhand" rel="stylesheet">
 
-  <script src="jscript/script.js" type="text/javascript" async></script>
+  <title>FACE CLICKER</title>
 
 </head>
 
 <body>
 
   <div class="header">
-    <div class="title">
-      <h1>FACE CLICKER</h1>
+    <div class="left">
     </div>
-    <nav class="tabtop">
-      <button class="tablink" onclick="openPage('home', this)" id="defaultOpen"><h2>HOME</h2></button>
-      <button class="tablink" onclick="openPage('more', this)"><h2>MORE</h2></button>
-    </nav>
+    <div class="middle">
+      <h1 class="title">FACE CLICKER</h1>
+    </div>
+    <div class="right">
+      <button class="pageLink" onclick="location.href='http://cragios.github.io';">HOME</button>
+    </div>
   </div>
+  <nav class="tabtop">
+    <button class="tablink" onclick="openPage('home', this)" id="defaultOpen"><h2>HOME</h2></button>
+    <button class="tablink" onclick="openPage('more', this)"><h2>MORE</h2></button>
+  </nav>
 
   <!--HOME START-->
   <div id="home" class="tabcontent">
@@ -34,20 +38,20 @@
         <div>
           <!--CLINTON START-->
           <div>
-            <button type="button" class="facebutton" id="clintonbtn" onclick="oof()">
+            <button type="button" class="face_btn" id="clintonbtn" onclick="oof()">
               <img src="images/clinton.jpg" id = "clintonimg">
             </button>
-            <p class="sound_text" id="oof"></p>
+            <p class="soundText" id="oof"></p>
           </div>
           <!--CLINTON END-->
         </div>
         <div>
           <!--YU HSUAN START-->
           <div>
-            <button type="button" class="facebutton" id="yuhsuanbtn" onclick="ohyeah()">
+            <button type="button" class="face_btn" id="yuhsuanbtn" onclick="ohyeah()">
               <img src="images/yuhsuan.jpg" id = "yuhsuanimg">
             </button>
-            <p class="sound_text" id="ohyeah"></p>
+            <p class="soundText" id="ohyeah"></p>
           </div>
           <!--YU HSUAN END-->
         </div>
@@ -60,7 +64,7 @@
         <div id="save_div">
           <!--EXPORT START-->
           <div class="port_div">
-            <button class="port" onclick="Export()">EXPORT SAVE</button>
+            <button class="port" id="exportText" onclick="Export()">EXPORT SAVE</button>
             <textarea id="export"></textarea>
           </div>
           <!--EXPORT END-->
@@ -94,10 +98,10 @@
   <div id="more" class="tabcontent">
     <h1>MORE</h1>
     <div class="page_links">
-      <button class="button" onclick="location.href='http://cragios.github.io';">HOME</button>
     </div>
   </div>
 
+  <script src="jscript/script.js" type="text/javascript" async></script>
 </body>
 
 </html>

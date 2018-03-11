@@ -17,14 +17,18 @@ function openPage(pageName, elmnt) {
 document.getElementById("defaultOpen").click();
 
 //oofClickcount start
-function oofCheck() {
+function check() {
   if (localStorage.getItem("oofClickcount") === null) {
     localStorage.oofClickcount = 0;
   }
   document.getElementById("oof").innerHTML = "OOF x" + localStorage.oofClickcount;
+  if (localStorage.getItem("ohyeahClickcount") === null) {
+    localStorage.ohyeahClickcount = 0;
+  }
+  document.getElementById("ohyeah").innerHTML = "OH YEAH x" + localStorage.ohyeahClickcount;
 }
 //call oofCheck
-oofCheck()
+check()
 
 function oof() {
   var oofAudio = new Audio("audio/oof.mp3"),
@@ -41,15 +45,6 @@ function oof() {
 //oofClickcount end
 
 //ohyeahClickcount start
-function ohyeahCheck() {
-  if (localStorage.getItem("ohyeahClickcount") === null) {
-    localStorage.ohyeahClickcount = 0;
-  }
-  document.getElementById("ohyeah").innerHTML = "OH YEAH x" + localStorage.ohyeahClickcount;
-}
-//calling ohyeahCheck
-ohyeahCheck()
-
 function ohyeah() {
   var oofAudio = new Audio("audio/ohyeah.mp3"),
     hitmarkerAudio = new Audio("audio/hitmarker.mp3");
@@ -62,16 +57,19 @@ function ohyeah() {
     document.getElementById("ohyeah").innerHTML = "Sorry, your browser does not support web storage...";
   }
 }
-//ohyeahClickcount start
+//ohyeahClickcount end
 
-function showSave(){
+function showSave() {
   document.getElementById("save_div").style.display = "block";
   document.getElementById("save_btn").style.display = "none";
 }
 
-function hideSave(){
-  document.getElementById("save_btn").style.display = "block";
+function hideSave() {
+  document.getElementById("save_btn").style.display = "flex";
   document.getElementById("save_div").style.display = "none";
+  document.getElementById("exportText").innerHTML = "EXPORT SAVE";
+  document.getElementById("export").value = "";
+
 }
 
 function showDelete() {
@@ -80,7 +78,7 @@ function showDelete() {
 }
 
 function hideDelete() {
-  document.getElementById("delete_btn").style.display = "block";
+  document.getElementById("delete_btn").style.display = "flex";
   document.getElementById("delete_div").style.display = "none";
 }
 
@@ -91,6 +89,7 @@ function Export() {
   saveArea.value = save;
   saveArea.select();
   document.execCommand("Copy");
+  document.getElementById("exportText").innerHTML = "COPIED TO CLIPBOARD!";
 }
 
 function Import() {
@@ -102,18 +101,16 @@ function Import() {
   oofCheck();
   ohyeahCheck();
 }
-//export & import finish
+//export & import end
 
 //delete start
 function clearAll() {
   localStorage.clear();
-  oofCheck();
-  ohyeahCheck();
+  check();
 }
 
 function clearThis(id) {
   localStorage.removeItem(id);
-  oofCheck();
-  ohyeahCheck();
+  check();
 }
 //delete end
